@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "icon" type = "image/x-icon" href="./assets/maneki-neko.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="./reservation.css">
+    <link rel=" stylesheet" href="../global-css/pageload.css">
+    <title>RESERVATION</title>
+</head>
+<body>
+    <section class = "nav-container">
+    <nav>
+        <a href="../index.html">
+          <label>
+          <div class = "logo-reservation">
+              <h4> NYAN <span> <img src = "../assets/maneki-neko.png"  ></span> RESTAURANT</h4>
+          </div>
+        </label>
+      </a>
+
+      
+      </nav> 
+    </section>
+    <div class="container">
+    <div class="container-time">
+        <h2 class="heading"> Time Open</h2>
+        <h3 class="heading-days">Monday-Friday</h3>
+        <p>7am - 11am (breakfast)</p>
+        <p>11am - 10pm(lunch/dinner)</p>
+
+
+        <h3 class="heading-days">Saturday & Sunday </h3>
+        <p>9am - 1am (breakfast)</p>
+        <p>1am - 10om (lunch/dinner)</p>
+        
+        <hr><h4 class="heading-phone">Call Us : (1234-567-890)</h4>
+
+
+
+
+
+    </div>
+
+
+    <div class="container-form">
+        <form action =#>
+            <h2 class="right-heading"> RESERVATION ONLINE</h2>
+
+            <div class="form-field" >
+                <p>Your Name</p>
+                <input type="text" id = "name" placeholder="Your Good Name">
+            </div>
+            <div class="form-field" 
+                <p>E-mail</p>
+                <input type="email"  id = "email" placeholder="Your email">
+            </div>
+            <div class="form-field" >
+                <p>Date</p>
+                <input type="date" id ="date">
+            </div>
+            <div class="form-field"  >
+                <p>Time</p>
+                <input type="time" id="time" placeholder="Your Good Name">
+            </div>
+            <div class="form-field" >
+                <p>Number Of Guests</p>
+                <select name = "select" id = "persons">
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    </select>
+            </div>
+
+            <button class="btn" onclick="saveData()">Submit</button>
+        </form>
+
+
+    </div>
+</div>
+
+<script>
+    function saveData () {
+        let persons = document.getElementById("persons").value;
+        let name = document.getElementById("name").value;
+        let email= document.getElementById("email").value;
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+    
+      
+
+        localStorage.setItem( "name" , JSON.stringify(name));
+        localStorage.setItem( "email" , JSON.stringify(email));
+        localStorage.setItem( "date" , JSON.stringify(date));
+        localStorage.setItem( "time" , JSON.stringify(time));
+        localStorage.setItem( "persons" , JSON.stringify(persons));
+    }
+saveData();
+    </script>
+
+    
+</body>
+</html>
